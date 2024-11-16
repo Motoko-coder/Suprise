@@ -16,3 +16,20 @@ proposal = RelationshipProposal(partner_name, proposal_message)
 print(proposal.propose())
 # Suprise
 To have suprise stay aware.
+def relationship_proposal():
+    while True:
+        try:
+            response = input("Do you love me? (Yes or No): ").strip().lower()
+            if response not in ['yes', 'no']:
+                raise ValueError("Invalid input. Please respond with 'Yes' or 'No'.")
+            if response == 'yes':
+                print("Yay! I'm so happy to hear that!")
+            else:
+                print("That's okay! Thank you for your honesty.")
+            break  # Exit the loop after a valid response
+        except ValueError as e:
+            print(e)
+
+if __name__ == "__main__":
+    relationship_proposal()
+    
